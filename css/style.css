@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom right, #50a3a2 0%, #78cc6d 100%);
+    font-family: 'Poppins', sans-serif;
+    
+}
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: red; 
+    border-radius: 10px
+}
+
+/* Setting Icon */
+span#settingIcon {
+    position: fixed;
+    right: 0;
+    top: 50px;
+    background: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+span#settingIcon i {
+    font-size: 40px;
+    animation: rotateIcon 2s infinite linear
+}
+
+/* Animation Rotate */
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0)
+    } 
+   
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    z-index: 999;
+}
+
+.page .nav {
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 80px;
+    align-self: flex-start
+}
+
+.page .nav a:first-child {
+    border-radius: 10px 10px 0 0
+}
+
+.page .nav a:last-child {
+    border-radius: 0 0 10px 10px 
+}
+
+.page .nav a{
+    display: block;
+    width: 100px;
+    padding:10px 0;
+    text-align: center;
+    background: #fff;
+    text-decoration: none;
+    color: #000
+}
+
+.page .nav a i {
+    display: block;
+}
+
+.page .content {
+    width: 80%;
+    height: 600px;
+    background: #fff;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between
+}
+
+.content .left {
+    width: 45%;
+    height: 110%;
+    position: relative;
+    top: -5%;
+    background: #fff;
+    border-radius: 10px
+}
+
+.content .left .img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.content .left .img-wrapper:before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 84px;
+    background: #fff;
+    left: -14px;
+    bottom: -50px;
+    transform: rotate(14deg);
+}
+
+.content .left .img-wrapper:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 84px;
+    background: #fff;
+    right: -14px;
+    bottom: -50px;
+    transform: rotate(-14deg);
+}
+
+.content .left .img-wrapper img {
+    width: 100%;
+    border-radius: 10px 10px 0 0
+}
+
+.content .left .profile {
+    position: relative;
+    padding-top: 100px;
+    text-align: center
+}
+
+.content .left .profile > img {
+    position: absolute;
+    left: 35%;
+    top: -50%;
+    /*المشكله فى الترانسفورم transform: translate(-50%,-50%) */
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: -8px 10px 10px rgba(120,204,109, 0.5);
+    transition: transform 0.5s
+}
+
+.content .left:hover .profile > img {
+    transform: rotate(360deg) 
+}
+
+.content .left .profile-links {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+}
+
+.content .left .profile-links a:first-child {
+    border-right: 1px solid #999;
+}
+/*
+.content .left .profile-links a:last-child {
+    background: green;
+    flex: 1
+} */
+
+.content .left .profile-links a {
+    display: block;
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid #999;
+    flex:1;
+    text-decoration: none;
+    color:#000;
+    transition: color 0.5s
+}
+
+.content .left .profile-links a:hover{
+    color: #78cc6d;
+}
+
+.content .right {
+    width: 55%;
+    background: yellow;
+    overflow-y: scroll;
+}
+
+.bg-bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+.bg-bubbles li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    bottom: -120px;
+    animation: square 10s infinite linear;
+}
+
+.bg-bubbles li:nth-child(1) {
+    left: 10%
+}
+.bg-bubbles li:nth-child(2) {
+    left: 30%
+}
+@keyframes square {
+    0% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(-1500px) rotate(600deg)
+    }
+}
